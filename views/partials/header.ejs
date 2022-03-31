@@ -12,9 +12,16 @@
 
 </head>
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
-    <a href="/blogs/new" <%- title === 'Add Blog' ? 'class="active"' : '' %>>ADD Blog</a>
-    <a href="/blogs" <%- title === 'All Blogs' ? 'class="active"' : '' %>>ALL Blogs</a>
-  </nav>
+<nav>
+  <img src="/images/camera.svg">
+  <a href="/blogs" <%- title === 'Dashboard' ? 'class="active"' : '' %>>Dashboard</a>
+  <% if (user) { %>
+    <a href="/blogs/new"	<%- title === 'Create Post' ? 'class="active"' : '' %>>
+		Create Post</a>
+    <a href="/logout">LOG OUT</a>
+  <% } else { %>
+    <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+  <% } %>
+</nav>
   <main>
     <h1><%= title %></h1>

@@ -1,7 +1,18 @@
 <%- include('../partials/header') %>
-
-<form id="new-form" action="/blogs" method="POST">
-    
+<div class="container">
+    <h1 class="mb-4">New Post</h1>
+    <form action="/blogs" method="POST">
+    <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" required="true" name="title" id="title" class="form-control">
+    </div>
+    <div class="form-group">
+            <label for="text">Text</label>
+            <textarea required="true" name="text" id="text" class="form-control"></textarea>
+    </div>
+    <a href="/blogs" class="btn btn-secondary">NVM</a>
+    <button type="submit" class="btn btn-primary">POST</button>
 </form>
+</div>
 
 <%- include('../partials/footer') %>
