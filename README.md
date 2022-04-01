@@ -3,6 +3,7 @@
 # 1.1 Description:
 
 This SIMPLR crud app is a very basic version of the popular blog website Tumblr.
+
 # 1.2 Screenshots:
 
 
@@ -12,7 +13,7 @@ HTML, CSS, JavaScript, Node, Express, Mongo, Git, Heroku
 
 # 1.4 Getting Started:
 
-Game Link [SIMPLR] https://jrodv117.github.io/slot_machine/
+Game Link [SIMPLR] https://simplr1.herokuapp.com
 
 # 1.5 Next Steps:
 
