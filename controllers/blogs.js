@@ -1,6 +1,6 @@
 const Blog = require('../models/blog');
 
-module.exports ={
+module.exports = {
     index,
     new: newBlog,
     create,
@@ -8,14 +8,19 @@ module.exports ={
     delete: deleteBlog
 }
 
-function index(req, res){
-    Blog.find({}, function(err, blogs){
-        res.render('blogs/index', {title:'Dashboard', blogs})
+function index(req, res) {
+    Blog.find({}, function(err, blogs) {
+        res.render('blogs/index', {
+            title: 'Dashboard',
+            blogs
+        })
     })
 };
 
-function newBlog(req, res){
-    res.render('blogs/new', {title:"Create Post"})
+function newBlog(req, res) {
+    res.render('blogs/new', {
+        title: "Create Post"
+    })
 }
 
 
@@ -32,12 +37,18 @@ function create(req, res) {
 
 function show(req, res) {
     Blog.findById(req.params.id, function(err, blog) {
-            res.render('blogs/show', {title:'Post', blog});
-      });
-  }
+        res.render('blogs/show', {
+            title: 'Post',
+            blog
+        });
+    });
+}
 
-  function deleteBlog(req, res) {
-    Blog.findByIdAndDelete({ _id: req.params.id, user: req.user._id }, function(err) {
+function deleteBlog(req, res) {
+    Blog.findByIdAndDelete({
+        _id: req.params.id,
+        user: req.user._id
+    }, function(err) {
         res.redirect('/blogs');
     });
-  }
+}
